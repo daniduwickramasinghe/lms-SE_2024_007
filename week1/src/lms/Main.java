@@ -1,16 +1,17 @@
 package lms;
 
-import lms.model.Book;
-import lms.model.DVD;
+import lms.model.Staff;
+import lms.model.Student;
 
 public class Main {
     public static void main(String[] args) {
-        Book b = new Book("B001", "Clean Code", "Robert C. Martin");
-        DVD d = new DVD("D001", "Intro to Algorithms", 120);
+        Student s = new Student("M001", "Your Name");
+        Staff t = new Staff("M002", "Your Name");
 
-        System.out.println(b.calculateLateFee(3));  // expect 30.0
-        System.out.println(d.calculateLateFee(3));  // expect 75.0
+        System.out.println(s.getMaxBorrowLimit());  // expect 3
+        System.out.println(t.getMaxBorrowLimit());  // expect 10
+        System.out.println(s);
 
-        new Book("", "Nobody", "Nobody");           // expect IllegalArgumentException
+        new Student("", "Your Name");               // expect IllegalArgumentException
     }
 }
